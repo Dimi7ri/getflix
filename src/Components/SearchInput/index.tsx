@@ -4,19 +4,25 @@ import { Movie } from '../DisplayMovie';
 const omdbapiApiUrl = `https://www.omdbapi.com`;
 const apiKey = '';
 
-export const Search = (props: any) => {
-  const { setMovie } = props;
+const SearchInput = (props: any) => {
+  const { setMovie, setLoading, setError } = props;
   const [searchInput, setSearchInput] = useState<string>('');
 
   const handleSearch = async () => {
+    setLoading(true);
+    setError(false);
     try {
       const url = omdbapiApiUrl + `/?apikey=` + apiKey + `&t=` + searchInput;
       const response = await fetch(url);
       const result = await response.json() as Movie;
-      console.log(result);
+      if (!result.Title) {
+        setError(true);
+      }
       setMovie(result);
+      setLoading(false);
     } catch (error) {
-      console.log(error);
+      setError(true);
+      setLoading(false);
     }
   };
 
@@ -27,3 +33,5 @@ export const Search = (props: any) => {
     </div>
   );
 }
+
+export default SearchInput;
