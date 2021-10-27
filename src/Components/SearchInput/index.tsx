@@ -27,9 +27,9 @@ const SearchInput = (props: any) => {
   };
 
   return (
-    <div className='search' >
-      <input placeholder='Title' value={searchInput} onChange={e => setSearchInput(e.currentTarget.value)} />
-      <button onClick={() => handleSearch()}>Search</button>
+    <div className='search'>
+      <input data-testid='search-input' placeholder='Title' value={searchInput} onChange={e => setSearchInput(e.currentTarget.value)} />
+      <button data-testid='search-button' onClick={() => handleSearch()}>Search</button>
     </div>
   );
 }

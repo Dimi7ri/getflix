@@ -10,7 +10,7 @@ const Home = () => {
   const [error, setError] = useState<boolean>(false);
 
   return (
-    <div className='content'>
+    <div className='content' data-testid='home-page'>
       <h1>Find your favorite movies</h1>
       <SearchInput setMovie={setMovie} setLoading={setLoading} setError={setError} />
 

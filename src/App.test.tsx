@@ -1,9 +1,12 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('Should render App', () => {
+  const { getByTestId } = render(<App />);
+  const app = getByTestId('app');
+
+  expect(app).toBeTruthy();
+  expect(app.textContent).toContain('Find your favorite movies');
+  expect(app.className).toBe('container');
+
 });
