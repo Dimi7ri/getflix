@@ -9,9 +9,9 @@ export const DisplayMovie = (movie: Movie) => {
 
   if (!movie.Title) return (<></>);
   return (
-    <div>
-      <div>{Title} </div>
-      <div>{Year}</div>
+    <div className='movie'>
+      <div className='title'>{Title} </div>
+      <div className='year'>{Year}</div>
       <img src={Poster} alt={Title} />
     </div>
   );
