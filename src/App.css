@@ -89,3 +89,16 @@ body{
   font-size: 22px;
   font-weight: bold;
 }
+.container .content .movie .genre{
+  padding: 5px;
+  font-size: 18px;
+}
+.container .content .movie .plot{
+  padding: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.container .content .movie .actors{
+  padding: 5px;
+  font-size: 15px;
+}

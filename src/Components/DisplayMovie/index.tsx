@@ -28,9 +28,9 @@ const DisplayDetails = (movie: Movie) => {
   const { Plot, Genre, Actors } = movie;
   return (
     <>
-      <div className="genre">{Genre}</div>
-      <div className="plot">{Plot}</div>
-      <div className="actors">{Actors}</div>
+      <div className='genre'>{Genre}</div>
+      <div className='plot'>{Plot}</div>
+      <div className='actors'>{Actors}</div>
     </>
   );
 }
